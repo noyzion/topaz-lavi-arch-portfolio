@@ -13,18 +13,20 @@ function Hero() {
   }
 
   return (
-    <section id="hero" className="hero">
+    <section id="home" className="hero">
       <div className="hero-content">
         <h1 className="hero-title">
           <span className="hero-name">{t.hero.name}</span>
           <span className="hero-subtitle">{t.hero.subtitle}</span>
         </h1>
-        <p className="hero-description">
-          {t.hero.description}
-        </p>
-        <button className="hero-button" onClick={scrollToProjects}>
-          {t.hero.button}
-        </button>
+        {t.hero.description ? (
+          <p className="hero-description">{t.hero.description}</p>
+        ) : null}
+        {t.hero.button ? (
+          <button type="button" className="hero-button" onClick={scrollToProjects}>
+            {t.hero.button}
+          </button>
+        ) : null}
         <div className="hero-side-text">{t.hero.subtitle}</div>
       </div>
     </section>
@@ -32,4 +34,3 @@ function Hero() {
 }
 
 export default Hero
-

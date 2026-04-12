@@ -58,21 +58,135 @@
   object-fit: cover;
 }
 
-.about-diploma-wrap {
-  max-width: 520px;
-  margin-inline: auto;
-  margin-bottom: 80px;
-  padding: 0 8px;
+.about-credentials {
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-color);
 }
 
-.about-diploma {
-  width: 100%;
-  height: auto;
-  max-height: min(70vh, 520px);
-  object-fit: contain;
-  object-position: top center;
+.about-credentials-title {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--light-gray);
+  margin: 0 0 20px;
+}
+
+.about-credentials-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+@media (min-width: 640px) {
+  .about-credentials-row {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+  }
+}
+
+.about-diploma-link {
+  text-decoration: none;
+  color: inherit;
   display: block;
-  margin-inline: auto;
+}
+
+.about-diploma-link:hover .about-diploma-caption {
+  color: var(--black);
+}
+
+.about-diploma-thumb-wrap {
+  width: 128px;
+  height: 160px;
+  border: 2px solid var(--border-color);
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.about-diploma-link:hover .about-diploma-thumb-wrap {
+  border-color: var(--black);
+}
+
+.about-diploma-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.about-diploma-link:hover .about-diploma-thumb {
+  transform: scale(1.05);
+}
+
+.about-diploma-caption {
+  display: block;
+  font-size: 12px;
+  color: var(--light-gray);
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.about-credentials-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.about-engineer-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--black);
+  margin: 0;
+}
+
+.about-engineer-field,
+.about-engineer-school {
+  font-size: 12px;
+  color: var(--gray);
+  margin: 0;
+}
+
+.about-engineer-school {
+  color: var(--light-gray);
+}
+
+.about-download-link {
+  font-size: 12px;
+  color: var(--gray);
+  text-decoration: none;
+  margin-top: 6px;
+}
+
+.about-download-link:hover {
+  color: var(--black);
+}
+
+.about-portfolio-cta {
+  margin-top: 24px;
+}
+
+.about-portfolio-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  background: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.about-portfolio-button:hover {
+  background: #333;
 }
 
 .about-text-wrapper {
@@ -144,57 +258,6 @@
   margin-bottom: 0;
 }
 
-.about-skills {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 80px;
-}
-
-[dir="rtl"] .skill-item {
-  text-align: right;
-}
-
-[dir="ltr"] .skill-item {
-  text-align: left;
-}
-
-.skill-item {
-  background: transparent;
-  padding: 0;
-  text-align: start;
-  transition: all 0.3s ease;
-  border: none;
-  position: relative;
-}
-
-
-.skill-item-tall {
-  padding-top: 30px;
-}
-
-[dir="rtl"] .skill-item:hover {
-  transform: translateX(-5px);
-}
-
-[dir="ltr"] .skill-item:hover {
-  transform: translateX(5px);
-}
-
-.skill-item h3 {
-  font-size: clamp(18px, 2vw, 28px);
-  color: var(--black);
-  margin-bottom: 20px;
-  font-weight: 300;
-  letter-spacing: -0.02em;
-}
-
-.skill-item p {
-  color: var(--gray);
-  font-size: clamp(14px, 1.2vw, 18px);
-  font-weight: 300;
-  line-height: 1.8;
-}
 
 @media (max-width: 968px) {
   .about {
@@ -206,11 +269,6 @@
     gap: 40px;
   }
 
-  .about-skills {
-    grid-template-columns: 1fr;
-    gap: 35px;
-    margin-top: 50px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -232,10 +290,6 @@
   .about-photo-wrap {
     max-width: 280px;
     margin-inline: auto;
-  }
-
-  .about-diploma-wrap {
-    margin-bottom: 50px;
   }
 
   .about-text-wrapper {
@@ -261,17 +315,5 @@
     display: none;
   }
 
-  .about-skills {
-    margin-top: 50px;
-    gap: 30px;
-  }
-
-  .skill-item h3 {
-    font-size: clamp(18px, 4vw, 24px);
-  }
-
-  .skill-item p {
-    font-size: clamp(14px, 3vw, 16px);
-  }
 }
 

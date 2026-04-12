@@ -9,20 +9,21 @@ function Projects() {
     <section id="projects" className="projects">
       <div className="projects-container">
         <h2 className="section-title projects-title">{t.projects.title}</h2>
-        <p className="section-subtitle">
-          {t.projects.subtitle}
-        </p>
+        {t.projects.subtitle ? (
+          <p className="section-subtitle">{t.projects.subtitle}</p>
+        ) : null}
         <div className="projects-grid">
           {t.projects.items.map((project, index) => (
-            <div key={index} className={`project-card ${index === 0 ? 'project-featured' : ''}`}>
+            <a
+              key={index}
+              href={project.pdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card"
+            >
               <div className="project-image">
                 {project.image ? (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="project-img"
-                    loading="lazy"
-                  />
+                  <img src={project.image} alt={project.title} className="project-img" loading="lazy" />
                 ) : (
                   <div className="project-placeholder">
                     <span className="placeholder-icon">🏗️</span>
@@ -36,10 +37,12 @@ function Projects() {
                 </div>
               </div>
               <div className="project-info">
+                <span className="project-category-inline">{project.category}</span>
                 <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
+                {project.description ? <p className="project-description">{project.description}</p> : null}
+                <span className="project-view-link">{t.projects.viewProject}</span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -48,4 +51,3 @@ function Projects() {
 }
 
 export default Projects
-
