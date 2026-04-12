@@ -27,7 +27,7 @@ const projectAssets = [
     mediaType: 'pdf',
   },
   {
-    image: '/images/project-interior-2.png',
+    image: '/images/project-interior-1.png',
     previewUrl: '/images/project-interior-1.png',
     mediaType: 'gallery',
     galleryUrls: [
