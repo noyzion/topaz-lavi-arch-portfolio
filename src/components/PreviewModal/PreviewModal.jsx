@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { usePreview } from '../../contexts/PreviewContext'
 import { useLanguage } from '../../contexts/LanguageContext'
@@ -8,6 +8,11 @@ function PreviewModal() {
   const { preview, closePreview } = usePreview()
   const { t } = useLanguage()
   const closeRef = useRef(null)
+  const [slide, setSlide] = useState(0)
+
+  useEffect(() => {
+    setSlide(0)
+  }, [preview])
 
   useEffect(() => {
     if (preview && closeRef.current) {
@@ -15,14 +20,44 @@ function PreviewModal() {
     }
   }, [preview])
 
+  useEffect(() => {
+    if (!preview || preview.mediaType !== 'gallery' || !preview.galleryUrls?.length) return undefined
+    const { galleryUrls: urls } = preview
+    const onKey = (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        setSlide((s) => (s <= 0 ? urls.length - 1 : s - 1))
+      }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        setSlide((s) => (s >= urls.length - 1 ? 0 : s + 1))
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [preview])
+
   if (!preview) return null
 
-  const { previewUrl, title, mediaType } = preview
+  const { previewUrl, title, mediaType, galleryUrls } = preview
   const isPdf = mediaType === 'pdf'
+  const isGallery = mediaType === 'gallery' && Array.isArray(galleryUrls) && galleryUrls.length > 0
+  const slides = isGallery ? galleryUrls : []
+  const currentUrl = isGallery ? slides[Math.min(slide, slides.length - 1)] : previewUrl
 
   const openInNewTab = () => {
-    window.open(previewUrl, '_blank', 'noopener,noreferrer')
+    window.open(currentUrl, '_blank', 'noopener,noreferrer')
   }
+
+  const goPrev = () => {
+    setSlide((s) => (s <= 0 ? slides.length - 1 : s - 1))
+  }
+
+  const goNext = () => {
+    setSlide((s) => (s >= slides.length - 1 ? 0 : s + 1))
+  }
+
+  const hintText = isGallery ? t.preview.galleryHint : t.preview.hint
 
   const node = (
     <div className="preview-modal-root" role="presentation">
@@ -43,17 +78,44 @@ function PreviewModal() {
         </header>
         <div className="preview-modal-body">
           {isPdf ? (
-            <iframe
-              title={title}
-              src={`${previewUrl}#view=FitH`}
-              className="preview-modal-frame"
-            />
+            <iframe title={title} src={`${previewUrl}#view=FitH`} className="preview-modal-frame" />
+          ) : isGallery ? (
+            <div className="preview-modal-gallery">
+              <div className="preview-modal-image-wrap preview-modal-gallery-main">
+                <img src={currentUrl} alt="" className="preview-modal-image" />
+              </div>
+              <div className="preview-modal-gallery-bar">
+                <button type="button" className="preview-modal-gallery-nav" onClick={goPrev} aria-label={t.preview.prev}>
+                  ‹
+                </button>
+                <span className="preview-modal-gallery-counter">
+                  {slide + 1} / {slides.length}
+                </span>
+                <button type="button" className="preview-modal-gallery-nav" onClick={goNext} aria-label={t.preview.next}>
+                  ›
+                </button>
+              </div>
+              <div className="preview-modal-thumbs" role="tablist" aria-label={title}>
+                {slides.map((url, i) => (
+                  <button
+                    key={url}
+                    type="button"
+                    role="tab"
+                    aria-selected={i === slide}
+                    className={`preview-modal-thumb ${i === slide ? 'is-active' : ''}`}
+                    onClick={() => setSlide(i)}
+                  >
+                    <img src={url} alt="" />
+                  </button>
+                ))}
+              </div>
+            </div>
           ) : (
             <div className="preview-modal-image-wrap">
               <img src={previewUrl} alt="" className="preview-modal-image" />
             </div>
           )}
-          <p className="preview-modal-hint">{t.preview.hint}</p>
+          <p className="preview-modal-hint">{hintText}</p>
         </div>
       </div>
     </div>

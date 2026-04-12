@@ -25,6 +25,7 @@ function Projects() {
                     previewUrl: project.previewUrl,
                     title: project.title,
                     mediaType: project.mediaType,
+                    galleryUrls: project.galleryUrls,
                   })
                 }
               >

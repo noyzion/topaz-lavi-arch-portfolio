@@ -5,6 +5,7 @@
 }
 
 :root {
+  color-scheme: light;
   --black: #000000;
   --dark-gray: #1a1a1a;
   --gray: #4a4a4a;
@@ -19,6 +20,35 @@
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.1);
   --content-max: 1080px;
+  --nav-bg: rgba(255, 255, 255, 0.98);
+  --nav-bg-scrolled: #ffffff;
+  --nav-mobile-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --primary-button-hover: #333333;
+  --modal-backdrop: rgba(0, 0, 0, 0.55);
+  --modal-dialog-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --black: #f0f0f0;
+  --dark-gray: #e8e8e8;
+  --gray: #b0b0b0;
+  --light-gray: #8a8a8a;
+  --lighter-gray: #2a2a2a;
+  --white: #121212;
+  --text-color: #ececec;
+  --text-light: #b8b8b8;
+  --bg-color: #121212;
+  --bg-light: #1c1c1c;
+  --border-color: #333333;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.55);
+  --nav-bg: rgba(18, 18, 18, 0.92);
+  --nav-bg-scrolled: #141414;
+  --nav-mobile-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --primary-button-hover: #ffffff;
+  --modal-backdrop: rgba(0, 0, 0, 0.72);
+  --modal-dialog-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
 }
 
 body {

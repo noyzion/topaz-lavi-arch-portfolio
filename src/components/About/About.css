@@ -216,8 +216,8 @@
 
 .about-portfolio-button:hover,
 .about-portfolio-button:focus-visible {
-  background: #333;
-  border-color: #333;
+  background: var(--primary-button-hover);
+  border-color: var(--primary-button-hover);
 }
 
 .about-portfolio-button:focus-visible {

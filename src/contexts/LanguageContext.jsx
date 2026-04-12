@@ -22,14 +22,20 @@ const projectAssets = [
     mediaType: 'pdf',
   },
   {
-    image: '/images/project-interior-4.png',
+    image: '/images/project-hotel-2.png',
     previewUrl: '/pdfs/project-rothschild-interior.pdf',
     mediaType: 'pdf',
   },
   {
-    image: '/images/project-villa.png',
-    previewUrl: '/images/project-villa.png',
-    mediaType: 'image',
+    image: '/images/project-interior-2.png',
+    previewUrl: '/images/project-interior-1.png',
+    mediaType: 'gallery',
+    galleryUrls: [
+      '/images/project-interior-1.png',
+      '/images/project-interior-2.png',
+      '/images/project-interior-3.png',
+      '/images/project-interior-4.png',
+    ],
   },
 ]
 
@@ -60,6 +66,10 @@ export const LanguageProvider = ({ children }) => {
         projects: 'פרויקטים',
         contact: 'צור קשר',
       },
+      theme: {
+        useDark: 'מעבר למצב כהה',
+        useLight: 'מעבר למצב בהיר',
+      },
       hero: {
         name: 'TOPAZ LAVI',
         subtitle: 'אדריכלות ועיצוב פנים',
@@ -72,19 +82,22 @@ export const LanguageProvider = ({ children }) => {
         text1:
           'בוגרת הנדסאית באדריכלות ועיצוב פנים מהמכללה האקדמית להנדסה ע״ש שנקר. אני משלבת דיוק הנדסי וחזון יצירתי בכל פרויקט. התמחותי כוללת מתחמי מגורים, אירוח ואדריכלות פנים, עם דגש על חללים פונקציונליים ומעודנים מבחינה אסתטית.',
         text2:
-          'כל פרויקט בתיק עובדות כמחווה לתכנון מושכל, לפרטים קטנים ולהבנה עמוקה של יחסי חלל. מארכיטקטורה בהשראה אסלאמית במלון נמל תל אביב ועד תכנון מגורים מודרני בנווה צדק — המטרה היא לחזק את חוויית האדם בחלל.',
+          'כל פרויקט בתיק עובדות כמחווה לתכנון מושכל, לפרטים קטנים ולהבנה עמוקה של יחסי חלל. מארכיטקטורה בהשראה אסלאמית במלון נמל תל אביב ועד תכנון מגורים מודרני בנווה צדק - המטרה היא לחזק את חוויית האדם בחלל.',
         credentialsTitle: 'השכלה והסמכות',
-        diplomaCaption: 'תצוגה מקדימה — תעודה',
+        diplomaCaption: 'תצוגה מקדימה - תעודה',
         engineerTitle: 'הנדסאית',
         engineerField: 'אדריכלות ועיצוב פנים',
-        engineerSchool: 'שנקר — 2025',
-        viewCv: 'תצוגה מקדימה — קו״ח',
-        viewPortfolio: 'תצוגה מקדימה — פורטפוליו מלא',
+        engineerSchool: 'שנקר - 2025',
+        viewCv: 'תצוגה מקדימה - קו״ח',
+        viewPortfolio: 'תצוגה מקדימה - פורטפוליו מלא',
       },
       preview: {
         close: 'סגירה',
         openNewTab: 'פתיחה בלשונית חדשה',
+        prev: 'הקודם',
+        next: 'הבא',
         hint: 'אם התצוגה לא נטענת, השתמשי ב״פתיחה בלשונית חדשה״.',
+        galleryHint: 'מעבר בין תמונות הפרויקט. ניתן לפתוח כל תמונה בלשונית נפרדת.',
       },
       projects: {
         title: 'פרויקטים',
@@ -92,24 +105,28 @@ export const LanguageProvider = ({ children }) => {
         viewProject: 'תצוגה מקדימה',
         items: mergeProjectItems([
           {
-            title: 'פרויקט גמר — מלון נמל תל אביב',
-            description: '',
+            title: 'פרויקט גמר - מלון נמל תל אביב',
+            description:
+              'תכנון אדריכלי של מלון בנמל תל אביב: חזיתות וחללים בהשראה אסלאמית, קונספט אירוח יוקרתי וקשר עיצובי לים ולקו הרקיע של העיר.',
             category: 'אדריכלות',
           },
           {
-            title: 'מתחם נווה צדק — ארבע משפחות',
-            description: '',
+            title: 'מתחם מגורים - נווה צדק (ארבע משפחות)',
+            description:
+              'תכנון מתחם מגורים ליצירת ארבע יחידות דיור בשכונת נווה צדק: התאמה לקנה המידה העירוני, לשימורי בנייה ולחיי השכונה.',
             category: 'אדריכלות',
           },
           {
-            title: 'עיצוב פנים — רוטשילד, תל אביב',
-            description: '',
+            title: 'עיצוב פנים - דירה ברוטשילד, תל אביב',
+            description:
+              'עיצוב פנים לדירת מגורים ברחוב רוטשילד: קו נקי, חומרים איכותיים ותכנון פונקציונלי למגורים עירוניים מודרניים.',
             category: 'עיצוב פנים',
           },
           {
-            title: 'פרויקט מגורים — Home',
-            description: '',
-            category: 'אדריכלות',
+            title: 'עיצוב פנים - בית פרטי',
+            description:
+              'עיצוב פנים לבית פרטי בסגנון מינימליסטי־עדין: פלטת צבעים נייטרלית, רהיטים מודולריים, אקסנטים מתכתיים ותאורה רכה לחלל מרגיע ועכשווי.',
+            category: 'עיצוב פנים',
           },
         ]),
       },
@@ -127,7 +144,7 @@ export const LanguageProvider = ({ children }) => {
       },
       footer: {
         rights: '© 2026 Topaz Lavi. כל הזכויות שמורות.',
-        tagline: 'הנדסאית באדריכלות — שנקר',
+        tagline: 'הנדסאית באדריכלות - שנקר',
       },
     },
     en: {
@@ -136,6 +153,10 @@ export const LanguageProvider = ({ children }) => {
         about: 'About Me',
         projects: 'Projects',
         contact: 'Contact Me',
+      },
+      theme: {
+        useDark: 'Switch to dark mode',
+        useLight: 'Switch to light mode',
       },
       hero: {
         name: 'TOPAZ LAVI',
@@ -154,14 +175,17 @@ export const LanguageProvider = ({ children }) => {
         diplomaCaption: 'Preview diploma',
         engineerTitle: 'Practical Engineer',
         engineerField: 'Architecture & Interior Design',
-        engineerSchool: 'Shenkar College — 2025',
+        engineerSchool: 'Shenkar College - 2025',
         viewCv: 'Preview résumé',
         viewPortfolio: 'Preview full portfolio',
       },
       preview: {
         close: 'Close',
         openNewTab: 'Open in new tab',
+        prev: 'Previous',
+        next: 'Next',
         hint: 'If the preview does not load, use “Open in new tab”.',
+        galleryHint: 'Browse project images. You can open any image in a new tab.',
       },
       projects: {
         title: 'Projects',
@@ -169,24 +193,28 @@ export const LanguageProvider = ({ children }) => {
         viewProject: 'Preview',
         items: mergeProjectItems([
           {
-            title: 'Final Project — Tel Aviv Port Hotel',
-            description: '',
+            title: 'Final Project - Tel Aviv Port Hotel',
+            description:
+              'Architectural design for a Tel Aviv Port hotel: façades and volumes with Islamic-inspired geometry, a refined hospitality concept, and a strong relationship to the sea and the city skyline.',
             category: 'Architecture',
           },
           {
-            title: 'Neve Tzedek Complex — 4 Families',
-            description: '',
+            title: 'Residential Complex - Neve Tzedek (Four Units)',
+            description:
+              'Planning of a residential complex creating four housing units in Neve Tzedek - balancing urban scale, preservation context, and neighborhood character.',
             category: 'Architecture',
           },
           {
-            title: 'Interior Design — Rothschild, Tel Aviv',
-            description: '',
+            title: 'Interior Design - Rothschild Boulevard Apartment',
+            description:
+              'Interior design for a Rothschild Boulevard residence: clean lines, quality materials, and a functional layout tailored to contemporary urban living.',
             category: 'Interior Design',
           },
           {
-            title: 'Residential Project — Home',
-            description: '',
-            category: 'Architecture',
+            title: 'Interior Design - Private Residence',
+            description:
+              'Private home interior design in a calm, minimalist language: a neutral palette, modular seating, metallic accents, and soft lighting for a serene contemporary atmosphere.',
+            category: 'Interior Design',
           },
         ]),
       },
@@ -204,7 +232,7 @@ export const LanguageProvider = ({ children }) => {
       },
       footer: {
         rights: '© 2026 Topaz Lavi. All rights reserved.',
-        tagline: 'Practical Architectural Engineering — Shenkar',
+        tagline: 'Practical Architectural Engineering - Shenkar',
       },
     },
   }

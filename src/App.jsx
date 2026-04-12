@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { ThemeProvider } from './contexts/ThemeContext'
 import { LanguageProvider } from './contexts/LanguageContext'
 import { PreviewProvider } from './contexts/PreviewContext'
 import Hero from './components/Hero/Hero'
@@ -19,19 +20,21 @@ function App() {
   }, [])
 
   return (
-    <LanguageProvider>
-      <PreviewProvider>
-        <div className="App">
-          <Navigation />
-          <Hero />
-          <About />
-          <Projects />
-          <Contact />
-          <Footer />
-        </div>
-        <PreviewModal />
-      </PreviewProvider>
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <PreviewProvider>
+          <div className="App">
+            <Navigation />
+            <Hero />
+            <About />
+            <Projects />
+            <Contact />
+            <Footer />
+          </div>
+          <PreviewModal />
+        </PreviewProvider>
+      </LanguageProvider>
+    </ThemeProvider>
   )
 }
 
