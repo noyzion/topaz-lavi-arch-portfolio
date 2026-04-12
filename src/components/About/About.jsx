@@ -1,5 +1,6 @@
 import React from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
+import { usePreview } from '../../contexts/PreviewContext'
 import './About.css'
 
 const ABOUT_ASSETS = {
@@ -17,6 +18,7 @@ const ABOUT_ASSETS = {
 
 function About() {
   const { t } = useLanguage()
+  const { openPreview } = usePreview()
 
   return (
     <section id="about" className="about">
@@ -42,11 +44,16 @@ function About() {
                 <div className="about-credentials">
                   <h3 className="about-credentials-title">{t.about.credentialsTitle}</h3>
                   <div className="about-credentials-row">
-                    <a
-                      href={ABOUT_ASSETS.diplomaPdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="about-diploma-link"
+                    <button
+                      type="button"
+                      className="about-diploma-trigger"
+                      onClick={() =>
+                        openPreview({
+                          previewUrl: ABOUT_ASSETS.diplomaPdf,
+                          title: t.about.diplomaCaption,
+                          mediaType: 'pdf',
+                        })
+                      }
                     >
                       <div className="about-diploma-thumb-wrap">
                         <img
@@ -57,22 +64,42 @@ function About() {
                         />
                       </div>
                       <span className="about-diploma-caption">{t.about.diplomaCaption}</span>
-                    </a>
+                    </button>
                     <div className="about-credentials-meta">
                       <p className="about-engineer-title">{t.about.engineerTitle}</p>
                       <p className="about-engineer-field">{t.about.engineerField}</p>
                       <p className="about-engineer-school">{t.about.engineerSchool}</p>
-                      <a href={ABOUT_ASSETS.cv} download className="about-download-link">
-                        {t.about.downloadCv}
-                      </a>
+                      <button
+                        type="button"
+                        className="about-text-link"
+                        onClick={() =>
+                          openPreview({
+                            previewUrl: ABOUT_ASSETS.cv,
+                            title: t.about.viewCv,
+                            mediaType: 'image',
+                          })
+                        }
+                      >
+                        {t.about.viewCv}
+                      </button>
                     </div>
                   </div>
                 </div>
 
                 <div className="about-portfolio-cta">
-                  <a href={ABOUT_ASSETS.portfolioPdf} download className="about-portfolio-button">
-                    {t.about.downloadPortfolio}
-                  </a>
+                  <button
+                    type="button"
+                    className="about-portfolio-button"
+                    onClick={() =>
+                      openPreview({
+                        previewUrl: ABOUT_ASSETS.portfolioPdf,
+                        title: t.about.viewPortfolio,
+                        mediaType: 'pdf',
+                      })
+                    }
+                  >
+                    {t.about.viewPortfolio}
+                  </button>
                 </div>
               </div>
               <div className="about-side-element" aria-hidden />

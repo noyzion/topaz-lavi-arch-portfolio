@@ -14,17 +14,28 @@ const projectAssets = [
   {
     image:
       'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/15993a4c5_hotel1.png',
-    pdf: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/d48af2dc3_4d72862ef_f8ba9505c_Topaz_Lavi_Project_Tel_Aviv_Port_Hotel.pdf',
+    previewUrl:
+      'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/d48af2dc3_4d72862ef_f8ba9505c_Topaz_Lavi_Project_Tel_Aviv_Port_Hotel.pdf',
+    mediaType: 'pdf',
   },
   {
     image:
       'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/bef5e5ddb_nevetzesek.png',
-    pdf: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/57dcdf3f5_Topaz_Lavi_Project_Neve_Tzedek_Complex.pdf',
+    previewUrl:
+      'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/57dcdf3f5_Topaz_Lavi_Project_Neve_Tzedek_Complex.pdf',
+    mediaType: 'pdf',
   },
   {
     image:
       'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/407b6e3d1_rotchild.png',
-    pdf: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68e24fc86e0bdc96192dbc0d/def6e3707_Topaz_Lavi_Project_Rothschild_Interior.pdf',
+    previewUrl:
+      'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68e24fc86e0bdc96192dbc0d/def6e3707_Topaz_Lavi_Project_Rothschild_Interior.pdf',
+    mediaType: 'pdf',
+  },
+  {
+    image: '/images/project-villa.png',
+    previewUrl: '/images/project-villa.png',
+    mediaType: 'image',
   },
 ]
 
@@ -69,17 +80,22 @@ export const LanguageProvider = ({ children }) => {
         text2:
           'כל פרויקט בתיק עובדות כמחווה לתכנון מושכל, לפרטים קטנים ולהבנה עמוקה של יחסי חלל. מארכיטקטורה בהשראה אסלאמית במלון נמל תל אביב ועד תכנון מגורים מודרני בנווה צדק — המטרה היא לחזק את חוויית האדם בחלל.',
         credentialsTitle: 'השכלה והסמכות',
-        diplomaCaption: 'צפייה בתעודה (PDF)',
+        diplomaCaption: 'תצוגה מקדימה — תעודה',
         engineerTitle: 'הנדסאית',
         engineerField: 'אדריכלות ועיצוב פנים',
         engineerSchool: 'שנקר — 2025',
-        downloadCv: 'הורדת קו״ח',
-        downloadPortfolio: 'הורדת פורטפוליו מלא (PDF)',
+        viewCv: 'תצוגה מקדימה — קו״ח',
+        viewPortfolio: 'תצוגה מקדימה — פורטפוליו מלא',
+      },
+      preview: {
+        close: 'סגירה',
+        openNewTab: 'פתיחה בלשונית חדשה',
+        hint: 'אם התצוגה לא נטענת, השתמשי ב״פתיחה בלשונית חדשה״.',
       },
       projects: {
         title: 'פרויקטים',
-        subtitle: '',
-        viewProject: 'צפייה בפרויקט',
+        subtitle: 'בחירה מפרויקטי אדריכלות ועיצוב פנים',
+        viewProject: 'תצוגה מקדימה',
         items: mergeProjectItems([
           {
             title: 'פרויקט גמר — מלון נמל תל אביב',
@@ -95,6 +111,11 @@ export const LanguageProvider = ({ children }) => {
             title: 'עיצוב פנים — רוטשילד, תל אביב',
             description: '',
             category: 'עיצוב פנים',
+          },
+          {
+            title: 'פרויקט מגורים — Home',
+            description: '',
+            category: 'אדריכלות',
           },
         ]),
       },
@@ -136,17 +157,22 @@ export const LanguageProvider = ({ children }) => {
         text2:
           'Each project in my portfolio reflects a commitment to thoughtful design, attention to detail, and a deep understanding of spatial relationships. From the elegant Islamic-inspired architecture of the Tel Aviv Port Hotel to the modern residential planning of Neve Tzedek, I strive to create environments that enhance the human experience.',
         credentialsTitle: 'Credentials',
-        diplomaCaption: 'View Diploma (PDF)',
+        diplomaCaption: 'Preview diploma',
         engineerTitle: 'Practical Engineer',
         engineerField: 'Architecture & Interior Design',
         engineerSchool: 'Shenkar College — 2025',
-        downloadCv: 'Download CV',
-        downloadPortfolio: 'Download Full Portfolio (PDF)',
+        viewCv: 'Preview résumé',
+        viewPortfolio: 'Preview full portfolio',
+      },
+      preview: {
+        close: 'Close',
+        openNewTab: 'Open in new tab',
+        hint: 'If the preview does not load, use “Open in new tab”.',
       },
       projects: {
         title: 'Projects',
-        subtitle: '',
-        viewProject: 'View Project',
+        subtitle: 'Selected architecture and interior work',
+        viewProject: 'Preview',
         items: mergeProjectItems([
           {
             title: 'Final Project — Tel Aviv Port Hotel',
@@ -162,6 +188,11 @@ export const LanguageProvider = ({ children }) => {
             title: 'Interior Design — Rothschild, Tel Aviv',
             description: '',
             category: 'Interior Design',
+          },
+          {
+            title: 'Residential Project — Home',
+            description: '',
+            category: 'Architecture',
           },
         ]),
       },

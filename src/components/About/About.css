@@ -1,6 +1,6 @@
 .about {
   background: var(--bg-color);
-  padding: 100px 5%;
+  padding: clamp(4rem, 10vw, 6.25rem) 5%;
 }
 
 .about-container {
@@ -88,13 +88,20 @@
   }
 }
 
-.about-diploma-link {
-  text-decoration: none;
-  color: inherit;
+.about-diploma-trigger {
   display: block;
+  text-align: inherit;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
 }
 
-.about-diploma-link:hover .about-diploma-caption {
+.about-diploma-trigger:hover .about-diploma-caption,
+.about-diploma-trigger:focus-visible .about-diploma-caption {
   color: var(--black);
 }
 
@@ -106,7 +113,8 @@
   transition: border-color 0.3s ease;
 }
 
-.about-diploma-link:hover .about-diploma-thumb-wrap {
+.about-diploma-trigger:hover .about-diploma-thumb-wrap,
+.about-diploma-trigger:focus-visible .about-diploma-thumb-wrap {
   border-color: var(--black);
 }
 
@@ -118,8 +126,14 @@
   transition: transform 0.3s ease;
 }
 
-.about-diploma-link:hover .about-diploma-thumb {
+.about-diploma-trigger:hover .about-diploma-thumb,
+.about-diploma-trigger:focus-visible .about-diploma-thumb {
   transform: scale(1.05);
+}
+
+.about-diploma-trigger:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 4px;
 }
 
 .about-diploma-caption {
@@ -155,15 +169,28 @@
   color: var(--light-gray);
 }
 
-.about-download-link {
+.about-text-link {
   font-size: 12px;
   color: var(--gray);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   margin-top: 6px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: inherit;
 }
 
-.about-download-link:hover {
+.about-text-link:hover,
+.about-text-link:focus-visible {
   color: var(--black);
+}
+
+.about-text-link:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 2px;
 }
 
 .about-portfolio-cta {
@@ -177,16 +204,25 @@
   padding: 16px 32px;
   background: var(--black);
   color: var(--white);
-  text-decoration: none;
+  border: 1px solid var(--black);
   font-size: 12px;
   font-weight: 300;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.about-portfolio-button:hover {
+.about-portfolio-button:hover,
+.about-portfolio-button:focus-visible {
   background: #333;
+  border-color: #333;
+}
+
+.about-portfolio-button:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
 }
 
 .about-text-wrapper {
@@ -206,11 +242,11 @@
 }
 
 .about-text {
-  font-size: clamp(15px, 1.3vw, 19px);
-  line-height: 1.8;
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.85;
   color: var(--gray);
   text-align: start;
-  max-width: 550px;
+  max-width: 42rem;
   font-weight: 300;
 }
 
