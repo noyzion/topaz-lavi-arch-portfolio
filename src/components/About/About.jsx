@@ -35,6 +35,7 @@ function About() {
               <div className="about-text">
                 <p>{t.about.text1}</p>
                 <p>{t.about.text2}</p>
+                {t.about.text3 ? <p>{t.about.text3}</p> : null}
 
                 <div className="about-credentials">
                   <h3 className="about-credentials-title">{t.about.credentialsTitle}</h3>

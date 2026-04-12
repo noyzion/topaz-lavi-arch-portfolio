@@ -35,6 +35,7 @@ const projectAssets = [
       '/images/project-interior-2.png',
       '/images/project-interior-3.png',
       '/images/project-interior-4.png',
+      '/videos/home1.mp4',
     ],
   },
 ]
@@ -80,9 +81,11 @@ export const LanguageProvider = ({ children }) => {
         title: 'אודות',
         profileAlt: 'טופז לביא',
         text1:
-          'בוגרת הנדסאית למעשה באדריכלות מהמכללה האקדמית להנדסה, לעיצוב ולאמנות ע״ש שנקר. אני מביאה לכל פרויקט שילוב ייחודי של דיוק טכני וחזון יצירתי. עבודתי נפרשת על פני מתחמי מגורים, עיצוב אירוח ואדריכלות פנים, עם דגש על יצירת חללים שמאזנים בין פונקציונליות לרמה אסתטית מעודנת.',
+          'כבוגרת מסלול הנדסאי אדריכלות ועיצוב פנים ב־שנקר הנדסאים, אני משלבת בין דיוק טכני לראייה עיצובית מוקפדת, מתוך שאיפה ליצור חללים שמרגישים נכון - גם פונקציונלית וגם אסתטית.',
         text2:
-          'כל פרויקט בתיק העבודות שלי משקף מחויבות לעיצוב מושכל, לתשומת לב לפרטים ולהבנה עמוקה של יחסי חלל. מהאדריכלות האלגנטית בהשראה אסלאמית של מלון נמל תל אביב ועד לתכנון המגורים המודרני בנווה צדק, אני שואפת ליצור סביבות שמעצימות את חוויית האדם בחלל.',
+          'עבודתי מתמקדת בתכנון מגורים, עיצוב מלונות ואדריכלות פנים, תוך הקפדה על פרטים קטנים, הבנה עמוקה של יחסים מרחביים וחשיבה על חוויית המשתמש בכל שלב בתהליך. אני מאמינה שעיצוב טוב הוא כזה שמצליח לייצר איזון בין יופי, נוחות ומשמעות.',
+        text3:
+          'בתיק העבודות שלי ניתן לראות מגוון פרויקטים, החל מאדריכלות אלגנטית בהשראה אסלאמית במלון בנמל תל אביב ועד לתכנון מגורים מודרני בנווה צדק - כולם מבטאים שפה עיצובית נקייה, מדויקת ומחוברת לאדם.',
         credentialsTitle: 'השכלה והסמכות',
         diplomaCaption: 'תצוגה מקדימה - תעודה',
         engineerTitle: 'הנדסאית',
@@ -96,8 +99,9 @@ export const LanguageProvider = ({ children }) => {
         openNewTab: 'פתיחה בלשונית חדשה',
         prev: 'הקודם',
         next: 'הבא',
+        videoSlide: 'סרטון',
         hint: 'אם התצוגה לא נטענת, השתמשי ב״פתיחה בלשונית חדשה״.',
-        galleryHint: 'מעבר בין תמונות הפרויקט. ניתן לפתוח כל תמונה בלשונית נפרדת.',
+        galleryHint: 'מעבר בין תמונות וסרטון. ניתן לפתוח כל פריט בלשונית נפרדת.',
       },
       projects: {
         title: 'פרויקטים',
@@ -171,6 +175,7 @@ export const LanguageProvider = ({ children }) => {
           'As a graduate of Practical Architectural Engineering from Shenkar College of Engineering, Design and Art, I bring a unique blend of technical precision and creative vision to every project. My work spans residential complexes, hospitality design, and interior architecture, with a focus on creating spaces that are both functional and aesthetically refined.',
         text2:
           'Each project in my portfolio reflects a commitment to thoughtful design, attention to detail, and a deep understanding of spatial relationships. From the elegant Islamic-inspired architecture of the Tel Aviv Port Hotel to the modern residential planning of Neve Tzedek, I strive to create environments that enhance the human experience.',
+        text3: '',
         credentialsTitle: 'Credentials',
         diplomaCaption: 'Preview diploma',
         engineerTitle: 'Practical Engineer',
@@ -184,8 +189,9 @@ export const LanguageProvider = ({ children }) => {
         openNewTab: 'Open in new tab',
         prev: 'Previous',
         next: 'Next',
+        videoSlide: 'Video',
         hint: 'If the preview does not load, use “Open in new tab”.',
-        galleryHint: 'Browse project images. You can open any image in a new tab.',
+        galleryHint: 'Browse photos and video. You can open any item in a new tab.',
       },
       projects: {
         title: 'Projects',

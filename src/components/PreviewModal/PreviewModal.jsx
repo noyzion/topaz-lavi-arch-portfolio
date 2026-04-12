@@ -4,6 +4,10 @@ import { usePreview } from '../../contexts/PreviewContext'
 import { useLanguage } from '../../contexts/LanguageContext'
 import './PreviewModal.css'
 
+function isVideoUrl(url) {
+  return typeof url === 'string' && /\.(mp4|webm|ogg)(\?.*)?$/i.test(url)
+}
+
 function PreviewModal() {
   const { preview, closePreview } = usePreview()
   const { t } = useLanguage()
@@ -44,6 +48,7 @@ function PreviewModal() {
   const isGallery = mediaType === 'gallery' && Array.isArray(galleryUrls) && galleryUrls.length > 0
   const slides = isGallery ? galleryUrls : []
   const currentUrl = isGallery ? slides[Math.min(slide, slides.length - 1)] : previewUrl
+  const currentIsVideo = isGallery && isVideoUrl(currentUrl)
 
   const openInNewTab = () => {
     window.open(currentUrl, '_blank', 'noopener,noreferrer')
@@ -81,8 +86,14 @@ function PreviewModal() {
             <iframe title={title} src={`${previewUrl}#view=FitH`} className="preview-modal-frame" />
           ) : isGallery ? (
             <div className="preview-modal-gallery">
-              <div className="preview-modal-image-wrap preview-modal-gallery-main">
-                <img src={currentUrl} alt="" className="preview-modal-image" />
+              <div
+                className={`preview-modal-image-wrap preview-modal-gallery-main ${currentIsVideo ? 'preview-modal-gallery-main--video' : ''}`}
+              >
+                {currentIsVideo ? (
+                  <video key={currentUrl} className="preview-modal-video" src={currentUrl} controls playsInline preload="metadata" />
+                ) : (
+                  <img src={currentUrl} alt="" className="preview-modal-image" />
+                )}
               </div>
               <div className="preview-modal-gallery-bar">
                 <button type="button" className="preview-modal-gallery-nav" onClick={goPrev} aria-label={t.preview.prev}>
@@ -102,10 +113,19 @@ function PreviewModal() {
                     type="button"
                     role="tab"
                     aria-selected={i === slide}
-                    className={`preview-modal-thumb ${i === slide ? 'is-active' : ''}`}
+                    aria-label={isVideoUrl(url) ? t.preview.videoSlide : undefined}
+                    className={`preview-modal-thumb ${i === slide ? 'is-active' : ''} ${isVideoUrl(url) ? 'is-video' : ''}`}
                     onClick={() => setSlide(i)}
                   >
-                    <img src={url} alt="" />
+                    {isVideoUrl(url) ? (
+                      <span className="preview-modal-thumb-video-inner">
+                        <svg className="preview-modal-play-svg" viewBox="0 0 24 24" aria-hidden>
+                          <polygon points="8,5 19,12 8,19" />
+                        </svg>
+                      </span>
+                    ) : (
+                      <img src={url} alt="" />
+                    )}
                   </button>
                 ))}
               </div>
