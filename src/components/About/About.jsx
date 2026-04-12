@@ -4,16 +4,11 @@ import { usePreview } from '../../contexts/PreviewContext'
 import './About.css'
 
 const ABOUT_ASSETS = {
-  profile:
-    'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/13f5cf80e_profilepicture.png',
-  diplomaPdf:
-    'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68e24fc86e0bdc96192dbc0d/3461d2f80_diploma.pdf',
-  diplomaThumb:
-    'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68e24fc86e0bdc96192dbc0d/ef1ab6d3a_diploma.png',
-  cv:
-    'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68e24fc86e0bdc96192dbc0d/6c921675e_topazlavicv.jpg',
-  portfolioPdf:
-    'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/00e0ff3c3_TOPAZLAVI-PORTFOLIO.pdf',
+  profile: '/images/profile.png',
+  diplomaThumb: '/images/diploma.png',
+  diplomaPdf: '/pdfs/diploma.pdf',
+  portfolioPdf: '/pdfs/portfolio.pdf',
+  cv: null,
 }
 
 function About() {
@@ -69,19 +64,21 @@ function About() {
                       <p className="about-engineer-title">{t.about.engineerTitle}</p>
                       <p className="about-engineer-field">{t.about.engineerField}</p>
                       <p className="about-engineer-school">{t.about.engineerSchool}</p>
-                      <button
-                        type="button"
-                        className="about-text-link"
-                        onClick={() =>
-                          openPreview({
-                            previewUrl: ABOUT_ASSETS.cv,
-                            title: t.about.viewCv,
-                            mediaType: 'image',
-                          })
-                        }
-                      >
-                        {t.about.viewCv}
-                      </button>
+                      {ABOUT_ASSETS.cv ? (
+                        <button
+                          type="button"
+                          className="about-text-link"
+                          onClick={() =>
+                            openPreview({
+                              previewUrl: ABOUT_ASSETS.cv,
+                              title: t.about.viewCv,
+                              mediaType: 'image',
+                            })
+                          }
+                        >
+                          {t.about.viewCv}
+                        </button>
+                      ) : null}
                     </div>
                   </div>
                 </div>

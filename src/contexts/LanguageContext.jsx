@@ -12,24 +12,18 @@ export const useLanguage = () => {
 
 const projectAssets = [
   {
-    image:
-      'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/15993a4c5_hotel1.png',
-    previewUrl:
-      'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/d48af2dc3_4d72862ef_f8ba9505c_Topaz_Lavi_Project_Tel_Aviv_Port_Hotel.pdf',
+    image: '/images/project-hotel-1.png',
+    previewUrl: '/pdfs/project-tel-aviv-port-hotel.pdf',
     mediaType: 'pdf',
   },
   {
-    image:
-      'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/bef5e5ddb_nevetzesek.png',
-    previewUrl:
-      'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/57dcdf3f5_Topaz_Lavi_Project_Neve_Tzedek_Complex.pdf',
+    image: '/images/project-urban.png',
+    previewUrl: '/pdfs/project-neve-tzedek.pdf',
     mediaType: 'pdf',
   },
   {
-    image:
-      'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68e2426b76e0e549ab309cbc/407b6e3d1_rotchild.png',
-    previewUrl:
-      'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68e24fc86e0bdc96192dbc0d/def6e3707_Topaz_Lavi_Project_Rothschild_Interior.pdf',
+    image: '/images/project-interior-4.png',
+    previewUrl: '/pdfs/project-rothschild-interior.pdf',
     mediaType: 'pdf',
   },
   {
