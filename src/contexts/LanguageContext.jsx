@@ -30,7 +30,7 @@ export const LanguageProvider = ({ children }) => {
         contact: 'צור קשר'
       },
       hero: {
-        name: 'ספיר קלפה',
+        name: 'טופז לביא',
         subtitle: 'אדריכלות ועיצוב',
         description: 'יוצרת חללים פונקציונליים ואסתטיים המשלבים חדשנות עם קלאסיקה',
         button: 'צפה בפרויקטים'
@@ -115,7 +115,7 @@ export const LanguageProvider = ({ children }) => {
         contact: 'Contact'
       },
       hero: {
-        name: 'Sapir Kalfa',
+        name: 'Topaz Lavi',
         subtitle: 'Architecture & Design',
         description: 'Creating functional and aesthetic spaces that combine innovation with classicism',
         button: 'View Projects'

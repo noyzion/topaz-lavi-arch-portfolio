@@ -1,7 +1,7 @@
 {
-  "name": "sapir-kalfa-portfolio",
+  "name": "topaz-lavi-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio website for architect Sapir Kalfa",
+  "description": "Portfolio website for architect Topaz Lavi",
   "private": true,
   "scripts": {
     "dev": "vite",

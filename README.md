@@ -1,10 +1,10 @@
-# Sapir Kalfa - Architecture Portfolio
+# Topaz Lavi - Architecture Portfolio
 
-A modern, minimalist portfolio website for architect Sapir Kalfa, featuring bilingual support (Hebrew/English) and a clean black, gray, and white design aesthetic.
+A modern, minimalist portfolio website for architect Topaz Lavi, featuring bilingual support (Hebrew/English) and a clean black, gray, and white design aesthetic.
 
 ## 🎯 Project Overview
 
-This portfolio website showcases the work of architect Sapir Kalfa with a focus on clean design, smooth user experience, and full bilingual support. The site is built with React and optimized for deployment on Vercel.
+This portfolio website showcases the work of architect Topaz Lavi with a focus on clean design, smooth user experience, and full bilingual support. The site is built with React and optimized for deployment on Vercel.
 
 ## 🛠️ Technologies & Tools
 
