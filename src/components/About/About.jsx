@@ -10,12 +10,32 @@ function About() {
       <div className="about-container">
         <div className="about-content">
           <h2 className="section-title">{t.about.title}</h2>
-          <div className="about-text-wrapper">
-            <div className="about-text">
-              <p>{t.about.text1}</p>
-              <p className="about-highlight">{t.about.text2}</p>
+          <div className="about-intro">
+            <div className="about-photo-wrap">
+              <img
+                src="/images/profile.png"
+                alt={t.about.profileAlt}
+                className="about-photo"
+                width={400}
+                height={500}
+                loading="lazy"
+              />
             </div>
-            <div className="about-side-element"></div>
+            <div className="about-text-wrapper">
+              <div className="about-text">
+                <p>{t.about.text1}</p>
+                <p className="about-highlight">{t.about.text2}</p>
+              </div>
+              <div className="about-side-element"></div>
+            </div>
+          </div>
+          <div className="about-diploma-wrap">
+            <img
+              src="/images/diploma.png"
+              alt={t.about.diplomaAlt}
+              className="about-diploma"
+              loading="lazy"
+            />
           </div>
           <div className="about-skills">
             <div className="skill-item">

@@ -16,9 +16,18 @@ function Projects() {
           {t.projects.items.map((project, index) => (
             <div key={index} className={`project-card ${index === 0 ? 'project-featured' : ''}`}>
               <div className="project-image">
-                <div className="project-placeholder">
-                  <span className="placeholder-icon">🏗️</span>
-                </div>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-img"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="project-placeholder">
+                    <span className="placeholder-icon">🏗️</span>
+                  </div>
+                )}
                 <div className="project-overlay">
                   <div className="project-overlay-content">
                     <span className="project-category">{project.category}</span>

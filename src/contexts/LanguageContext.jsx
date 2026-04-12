@@ -37,6 +37,8 @@ export const LanguageProvider = ({ children }) => {
       },
       about: {
         title: 'אודות',
+        profileAlt: 'טופז לביא, אדריכלית',
+        diplomaAlt: 'תעודת הנדסאי באדריכלות ועיצוב פנים',
         text1: 'אדריכלית מקצועית המתמחה בעיצוב חללים מודרניים ופונקציונליים. עם ניסיון רב שנים בתכנון ועיצוב, אני מביאה גישה ייחודית המשלבת חדשנות עם קלאסיקה, תוך התחשבות מלאה בצרכי הלקוח והסביבה.',
         text2: 'כל פרויקט הוא הזדמנות ליצור משהו מיוחד - חלל שמשקף את האישיות והצרכים של הדיירים, תוך שמירה על אסתטיקה מודרנית ואיכות ביצוע גבוהה.',
         skill1: {
@@ -59,32 +61,38 @@ export const LanguageProvider = ({ children }) => {
           {
             title: 'בית פרטי מודרני',
             description: 'תכנון ועיצוב בית פרטי מודרני עם דגש על תאורה טבעית וחללים פתוחים',
-            category: 'תכנון אדריכלי'
+            category: 'תכנון אדריכלי',
+            image: '/images/project-villa.png'
           },
           {
             title: 'דירת פנטהאוז',
             description: 'עיצוב פנים לדירת פנטהאוז עם נוף פנורמי, שילוב של אלגנטיות ופונקציונליות',
-            category: 'עיצוב פנים'
+            category: 'עיצוב פנים',
+            image: '/images/project-interior-4.png'
           },
           {
             title: 'שיפוץ מבנה היסטורי',
             description: 'שיקום ושיפוץ מבנה היסטורי תוך שמירה על אופיו המקורי והתאמה לצרכים מודרניים',
-            category: 'שיפוץ ושיקום'
+            category: 'שיפוץ ושיקום',
+            image: '/images/project-hotel-4.png'
           },
           {
             title: 'משרדים מודרניים',
             description: 'תכנון חללי עבודה מודרניים המשלבים פונקציונליות עם עיצוב חדשני',
-            category: 'תכנון אדריכלי'
+            category: 'תכנון אדריכלי',
+            image: '/images/project-urban.png'
           },
           {
             title: 'וילה יוקרתית',
             description: 'תכנון מלא של וילה יוקרתית עם גינה מתוכננת ופינות ישיבה חיצוניות',
-            category: 'תכנון אדריכלי'
+            category: 'תכנון אדריכלי',
+            image: '/images/project-hotel-2.png'
           },
           {
             title: 'דירה קומפקטית',
             description: 'עיצוב חכם של דירה קטנה עם מקסימום פונקציונליות וניצול מיטבי של החלל',
-            category: 'עיצוב פנים'
+            category: 'עיצוב פנים',
+            image: '/images/project-plan.png'
           }
         ]
       },
@@ -122,6 +130,8 @@ export const LanguageProvider = ({ children }) => {
       },
       about: {
         title: 'About',
+        profileAlt: 'Topaz Lavi, architect',
+        diplomaAlt: 'Practical engineer diploma in architecture and interior design',
         text1: 'Professional architect specializing in modern and functional space design. With years of experience in planning and design, I bring a unique approach that combines innovation with classicism, while fully considering the needs of the client and the environment.',
         text2: 'Every project is an opportunity to create something special - a space that reflects the personality and needs of the residents, while maintaining modern aesthetics and high execution quality.',
         skill1: {
@@ -144,32 +154,38 @@ export const LanguageProvider = ({ children }) => {
           {
             title: 'Modern Private House',
             description: 'Planning and design of a modern private house with emphasis on natural lighting and open spaces',
-            category: 'Architectural Planning'
+            category: 'Architectural Planning',
+            image: '/images/project-villa.png'
           },
           {
             title: 'Penthouse Apartment',
             description: 'Interior design for a penthouse apartment with panoramic views, combining elegance and functionality',
-            category: 'Interior Design'
+            category: 'Interior Design',
+            image: '/images/project-interior-4.png'
           },
           {
             title: 'Historic Building Renovation',
             description: 'Restoration and renovation of a historic building while preserving its original character and adapting to modern needs',
-            category: 'Renovation & Restoration'
+            category: 'Renovation & Restoration',
+            image: '/images/project-hotel-4.png'
           },
           {
             title: 'Modern Offices',
             description: 'Planning of modern workspaces that combine functionality with innovative design',
-            category: 'Architectural Planning'
+            category: 'Architectural Planning',
+            image: '/images/project-urban.png'
           },
           {
             title: 'Luxury Villa',
             description: 'Complete planning of a luxury villa with designed garden and outdoor seating areas',
-            category: 'Architectural Planning'
+            category: 'Architectural Planning',
+            image: '/images/project-hotel-2.png'
           },
           {
             title: 'Compact Apartment',
             description: 'Smart design of a small apartment with maximum functionality and optimal space utilization',
-            category: 'Interior Design'
+            category: 'Interior Design',
+            image: '/images/project-plan.png'
           }
         ]
       },
