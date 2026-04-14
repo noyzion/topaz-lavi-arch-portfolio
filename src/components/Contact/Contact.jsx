@@ -60,7 +60,6 @@ function Contact() {
             </a>
           </div>
           <div className="contact-aside">
-            <p className="contact-aside-label">{t.contact.basedIn}</p>
             <p className="contact-aside-text">{t.contact.availability}</p>
           </div>
         </div>
