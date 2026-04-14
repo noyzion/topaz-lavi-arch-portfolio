@@ -92,7 +92,7 @@ export const LanguageProvider = ({ children }) => {
         engineerField: 'אדריכלות ועיצוב פנים',
         engineerSchool: 'שנקר - 2025',
         viewCv: 'תצוגה מקדימה - קו״ח',
-        viewPortfolio: 'פורטפוליו מלא',
+        viewPortfolio: 'תיק עבודות מלא',
       },
       preview: {
         close: 'סגירה',
