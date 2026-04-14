@@ -62,6 +62,14 @@
   display: none;
 }
 
+.about-credentials-heading {
+  display: block;
+}
+
+.about-diploma-mobile {
+  display: none;
+}
+
 .about-credentials {
   margin-top: 28px;
   padding-top: 28px;
@@ -323,9 +331,6 @@
 
   .about-intro {
     grid-template-columns: minmax(120px, 34vw) 1fr;
-    grid-template-areas:
-      "photo text"
-      "diploma text";
     gap: 18px;
     margin-bottom: 0;
     align-items: start;
@@ -334,24 +339,26 @@
   .about-photo-wrap {
     max-width: none;
     margin-inline: 0;
-    grid-area: photo;
-  }
-
-  .about-mobile-diploma {
-    display: block;
-    grid-area: diploma;
-    align-self: start;
-    margin-top: clamp(175px, 32vw, 250px);
   }
 
   .about-text-wrapper {
-    grid-area: text;
     grid-template-columns: 1fr;
     gap: 18px;
   }
 
-  .about-credentials-row > .about-diploma-trigger {
+  .about-credentials-row > .about-diploma-desktop {
     display: none;
+  }
+
+  .about-credentials-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .about-diploma-mobile {
+    display: block;
   }
 
   .about-credentials-row {
@@ -387,6 +394,10 @@
     text-align: right;
   }
 
+  [dir="rtl"] .about-credentials-heading {
+    flex-direction: row-reverse;
+  }
+
   [dir="ltr"] .about-credentials-row {
     justify-content: flex-start;
   }
@@ -394,6 +405,10 @@
   [dir="ltr"] .about-credentials-meta {
     align-items: flex-start;
     text-align: left;
+  }
+
+  [dir="ltr"] .about-credentials-heading {
+    flex-direction: row;
   }
 
   .about-text {
