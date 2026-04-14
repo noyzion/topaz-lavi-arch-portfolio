@@ -31,6 +31,29 @@ function About() {
                 loading="lazy"
               />
             </div>
+            <div className="about-mobile-diploma">
+              <button
+                type="button"
+                className="about-diploma-trigger"
+                onClick={() =>
+                  openPreview({
+                    previewUrl: ABOUT_ASSETS.diplomaPdf,
+                    title: t.about.diplomaCaption,
+                    mediaType: 'pdf',
+                  })
+                }
+              >
+                <div className="about-diploma-thumb-wrap">
+                  <img
+                    src={ABOUT_ASSETS.diplomaThumb}
+                    alt=""
+                    className="about-diploma-thumb"
+                    loading="lazy"
+                  />
+                </div>
+                <span className="about-diploma-caption">{t.about.diplomaCaption}</span>
+              </button>
+            </div>
             <div className="about-text-wrapper">
               <div className="about-text">
                 <p>{t.about.text1}</p>
@@ -38,30 +61,7 @@ function About() {
                 {t.about.text3 ? <p>{t.about.text3}</p> : null}
 
                 <div className="about-credentials">
-                  <div className="about-credentials-heading">
-                    <h3 className="about-credentials-title">{t.about.credentialsTitle}</h3>
-                    <button
-                      type="button"
-                      className="about-diploma-trigger about-diploma-mobile"
-                      onClick={() =>
-                        openPreview({
-                          previewUrl: ABOUT_ASSETS.diplomaPdf,
-                          title: t.about.diplomaCaption,
-                          mediaType: 'pdf',
-                        })
-                      }
-                    >
-                      <div className="about-diploma-thumb-wrap">
-                        <img
-                          src={ABOUT_ASSETS.diplomaThumb}
-                          alt=""
-                          className="about-diploma-thumb"
-                          loading="lazy"
-                        />
-                      </div>
-                      <span className="about-diploma-caption">{t.about.diplomaCaption}</span>
-                    </button>
-                  </div>
+                  <h3 className="about-credentials-title">{t.about.credentialsTitle}</h3>
                   <div className="about-credentials-row">
                     <button
                       type="button"
