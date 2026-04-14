@@ -122,6 +122,18 @@
   background: var(--white);
 }
 
+.preview-modal-pdf-fallback {
+  min-height: min(70vh, 620px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  color: var(--gray);
+}
+
 .preview-modal-image-wrap {
   flex: 1;
   min-height: min(70vh, 620px);
@@ -300,7 +312,7 @@
   }
 
   .preview-modal-frame {
-    min-height: 55vh;
+    min-height: 74vh;
   }
 
   .preview-modal-image-wrap {

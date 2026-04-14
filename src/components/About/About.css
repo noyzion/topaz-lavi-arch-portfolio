@@ -356,6 +356,7 @@
 
   [dir="rtl"] .about-credentials-row {
     justify-content: flex-end;
+    flex-direction: row-reverse;
   }
 
   [dir="rtl"] .about-credentials-meta {

@@ -13,6 +13,7 @@ function PreviewModal() {
   const { t } = useLanguage()
   const closeRef = useRef(null)
   const [slide, setSlide] = useState(0)
+  const [isMobileViewport, setIsMobileViewport] = useState(false)
 
   useEffect(() => {
     setSlide(0)
@@ -23,6 +24,18 @@ function PreviewModal() {
       closeRef.current.focus()
     }
   }, [preview])
+
+  useEffect(() => {
+    const mql = window.matchMedia('(max-width: 768px)')
+    const onChange = (e) => setIsMobileViewport(e.matches)
+    setIsMobileViewport(mql.matches)
+    if (mql.addEventListener) {
+      mql.addEventListener('change', onChange)
+      return () => mql.removeEventListener('change', onChange)
+    }
+    mql.addListener(onChange)
+    return () => mql.removeListener(onChange)
+  }, [])
 
   useEffect(() => {
     if (!preview || preview.mediaType !== 'gallery' || !preview.galleryUrls?.length) return undefined
@@ -83,7 +96,18 @@ function PreviewModal() {
         </header>
         <div className="preview-modal-body">
           {isPdf ? (
-            <iframe title={title} src={`${previewUrl}#view=FitH`} className="preview-modal-frame" />
+            isMobileViewport ? (
+              <object data={previewUrl} type="application/pdf" className="preview-modal-frame">
+                <div className="preview-modal-pdf-fallback">
+                  <p>{t.preview.hint}</p>
+                  <button type="button" className="preview-modal-btn preview-modal-btn-secondary" onClick={openInNewTab}>
+                    {t.preview.openNewTab}
+                  </button>
+                </div>
+              </object>
+            ) : (
+              <iframe title={title} src={previewUrl} className="preview-modal-frame" />
+            )
           ) : isGallery ? (
             <div className="preview-modal-gallery">
               <div
