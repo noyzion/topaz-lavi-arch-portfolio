@@ -22,7 +22,7 @@ const projectAssets = [
     mediaType: 'pdf',
   },
   {
-    image: '/images/project-hotel-2.png',
+    image: '/images/project-rothschild-cover.png',
     previewUrl: '/pdfs/project-rothschild-interior.pdf',
     mediaType: 'pdf',
   },

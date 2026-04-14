@@ -90,7 +90,7 @@ function PreviewModal() {
                 className={`preview-modal-image-wrap preview-modal-gallery-main ${currentIsVideo ? 'preview-modal-gallery-main--video' : ''}`}
               >
                 {currentIsVideo ? (
-                  <video key={currentUrl} className="preview-modal-video" src={currentUrl} controls playsInline preload="metadata" />
+                  <video key={currentUrl} className="preview-modal-video" src={currentUrl} controls playsInline preload="metadata" muted />
                 ) : (
                   <img src={currentUrl} alt="" className="preview-modal-image" />
                 )}
