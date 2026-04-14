@@ -341,7 +341,7 @@
     display: block;
     grid-area: diploma;
     align-self: start;
-    margin-top: clamp(90px, 18vw, 150px);
+    margin-top: clamp(130px, 24vw, 190px);
   }
 
   .about-text-wrapper {
