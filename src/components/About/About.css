@@ -355,18 +355,24 @@
   }
 
   [dir="rtl"] .about-credentials-row {
-    justify-content: flex-end;
-    flex-direction: row-reverse;
-    width: 100%;
+    position: relative;
+    display: block;
+    min-height: 116px;
+    padding-right: calc(34vw + 18px);
   }
 
   [dir="rtl"] .about-credentials-meta {
     align-items: flex-end;
     text-align: right;
+    min-height: 116px;
+    justify-content: center;
   }
 
   [dir="rtl"] .about-diploma-trigger {
-    margin-inline-start: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-inline-start: 0;
   }
 
   [dir="rtl"] .about-diploma-caption {
