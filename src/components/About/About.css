@@ -357,10 +357,19 @@
   [dir="rtl"] .about-credentials-row {
     justify-content: flex-end;
     flex-direction: row-reverse;
+    width: 100%;
   }
 
   [dir="rtl"] .about-credentials-meta {
     align-items: flex-end;
+    text-align: right;
+  }
+
+  [dir="rtl"] .about-diploma-trigger {
+    margin-inline-start: auto;
+  }
+
+  [dir="rtl"] .about-diploma-caption {
     text-align: right;
   }
 
