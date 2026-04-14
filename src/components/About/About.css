@@ -323,9 +323,6 @@
 
   .about-intro {
     grid-template-columns: minmax(120px, 34vw) 1fr;
-    grid-template-areas:
-      "text photo"
-      "text diploma";
     gap: 18px;
     margin-bottom: 0;
     align-items: start;
@@ -334,23 +331,19 @@
   .about-photo-wrap {
     max-width: none;
     margin-inline: 0;
-    grid-area: photo;
   }
 
   .about-mobile-diploma {
-    display: block;
-    grid-area: diploma;
-    align-self: start;
+    display: none;
   }
 
   .about-text-wrapper {
-    grid-area: text;
     grid-template-columns: 1fr;
     gap: 18px;
   }
 
   .about-credentials-row > .about-diploma-desktop {
-    display: none;
+    display: block;
   }
 
   .about-credentials-row {
@@ -374,7 +367,8 @@
   }
 
   [dir="rtl"] .about-credentials-row {
-    justify-content: flex-end;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
   }
 
   [dir="rtl"] .about-credentials-meta {
@@ -388,6 +382,7 @@
 
   [dir="ltr"] .about-credentials-row {
     justify-content: flex-start;
+    flex-direction: row;
   }
 
   [dir="ltr"] .about-credentials-meta {
